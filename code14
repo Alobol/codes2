@@ -1,0 +1,32 @@
+#include <iostream>
+#include <cmath> // Для математических функций
+
+int main() {
+    double y, h;
+
+    // Ввод значений y и h
+    std::cout << "Введите значение y: ";
+    std::cin >> y;
+    std::cout << "Введите значение h: ";
+    std::cin >> h;
+
+    // Вычисление числителя
+    double numerator = exp(y + 2.3) + 7.1 * pow(h, 3);
+
+    // Вычисление знаменателя
+    double denominator = log(sqrt(y + 0.04 * h));
+
+    // Проверка на допустимость деления на ноль и логарифм
+    if (denominator == 0 || y + 0.04 * h <= 0) {
+        std::cerr << "Ошибка: Деление на ноль или недопустимый логарифм." << std::endl;
+        return 1;
+    }
+
+    // Вычисление P
+    double P = numerator / denominator;
+
+    // Вывод результата
+    std::cout << "Значение P: " << P << std::endl;
+
+    return 0;
+}
