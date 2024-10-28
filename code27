@@ -1,0 +1,28 @@
+#include <iostream>
+#include <cmath> // Для математических функций
+
+int main() {
+    double p, y;
+
+    // Ввод значений p и y
+    std::cout << "Введите значение p: ";
+    std::cin >> p;
+    std::cout << "Введите значение y: ";
+    std::cin >> y;
+
+    // Вычисление Z
+    double denominator = y * y + 7.325 * p;
+
+    // Проверка на допустимость деления на ноль
+    if (denominator == 0) {
+        std::cerr << "Ошибка: Деление на ноль." << std::endl;
+        return 1;
+    }
+
+    double Z = pow(sin(p + 0.4), 2) / denominator;
+
+    // Вывод результата
+    std::cout << "Значение Z: " << Z << std::endl;
+
+    return 0;
+}
