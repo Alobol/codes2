@@ -1,0 +1,29 @@
+#include <iostream>
+#include <cmath> // Для математических функций
+
+int main() {
+    double m, y;
+
+    // Ввод значений m и y
+    std::cout << "Введите значение m: ";
+    std::cin >> m;
+    std::cout << "Введите значение y: ";
+    std::cin >> y;
+
+    // Вычисление N
+    double numerator = pow(m, 2) + 2.8 * m + 0.355;
+    double denominator = cos(2 * y) + 3.6;
+
+    // Проверка на допустимость значений
+    if (denominator == 0) {
+        std::cerr << "Ошибка: Деление на ноль." << std::endl;
+        return 1;
+    }
+
+    double N = numerator / denominator;
+
+    // Вывод результата
+    std::cout << "Значение N: " << N << std::endl;
+
+    return 0;
+}
