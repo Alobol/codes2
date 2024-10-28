@@ -1,0 +1,38 @@
+#include <iostream>
+#include <cmath> // Для математических функций
+
+int main() {
+    double y, q;
+
+    // Ввод значений y и q
+    std::cout << "Введите значение y: ";
+    std::cin >> y;
+    std::cout << "Введите значение q: ";
+    std::cin >> q;
+
+    // Проверка, что 0.7y + 2q > 0 для вычисления логарифма
+    if (0.7 * y + 2 * q <= 0) {
+        std::cerr << "Ошибка: 0.7y + 2q должно быть больше нуля для вычисления логарифма." << std::endl;
+        return 1;
+    }
+
+    // Вычисление числителя
+    double numerator = log(0.7 * y + 2 * q);
+
+    // Вычисление знаменателя
+    double denominator = sqrt(3 * pow(y, 2) + 0.5 * y + 4);
+
+    // Проверка на допустимость деления на ноль
+    if (denominator == 0) {
+        std::cerr << "Ошибка: Деление на ноль." << std::endl;
+        return 1;
+    }
+
+    // Вычисление E
+    double E = numerator / denominator;
+
+    // Вывод результата
+    std::cout << "Значение E: " << E << std::endl;
+
+    return 0;
+}
