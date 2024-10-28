@@ -1,0 +1,44 @@
+#include <iostream>
+#include <cmath> // Для математических функций
+
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    int x; // Объявление переменной x
+    double G, e, y, f = 0; // Инициализация переменных
+
+    cout << "Введите номер задания" << endl;
+    cin >> x;
+
+    switch (x) {
+        case 1:
+        case 2:
+            cout << "Задания номер " << x << endl;
+
+            cout << "Введите значение переменной y" << endl;
+            cin >> y;
+
+            cout << "Введите значение переменной f" << endl;
+            cin >> f;
+
+            double numerator = exp(2 * y) + sin(f); // Вычисление числителя
+            double denominator = 3.8 * y + f; // Вычисление знаменателя
+
+            // Проверка на ноль в знаменателе
+            if (denominator == 0) {
+                cout << "Ошибка: деление на ноль!" << endl;
+            } else {
+                G = numerator / denominator; // Вычисляем G без логарифма
+                cout << "Значение переменной G = " << G << endl;
+            }
+            break;
+
+        default:
+            cout << "Неверный номер задания!" << endl; // Обработка неверного ввода
+            break;
+    }
+
+    return 0;
+}
