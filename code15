@@ -1,0 +1,32 @@
+#include <iostream>
+#include <cmath> // Для математических функций
+#include <complex> // Для комплексных чисел
+
+int main() {
+    double y;
+    std::complex<double> j(0, 1); // Комплексная единица
+
+    // Ввод значения y
+    std::cout << "Введите значение y: ";
+    std::cin >> y;
+
+    // Вычисление числителя
+    double numerator = 2 * sin(0.354 * y + 1);
+
+    // Вычисление знаменателя
+    std::complex<double> denominator = log(y + 2.0 * j);
+
+    // Проверка на допустимость логарифма
+    if (denominator == std::complex<double>(0, 0)) {
+        std::cerr << "Ошибка: Деление на ноль." << std::endl;
+        return 1;
+    }
+
+    // Вычисление P
+    std::complex<double> P = numerator / denominator;
+
+    // Вывод результата
+    std::cout << "Значение P: " << P << std::endl;
+
+    return 0;
+}
