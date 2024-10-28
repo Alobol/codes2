@@ -1,0 +1,38 @@
+#include <iostream>
+#include <cmath> // Для математических функций
+
+int main() {
+    double y, k;
+
+    // Ввод значений y и k
+    std::cout << "Введите значение y: ";
+    std::cin >> y;
+    std::cout << "Введите значение k: ";
+    std::cin >> k;
+
+    // Проверка, что y + k > 0 для вычисления логарифма
+    if (y + k <= 0) {
+        std::cerr << "Ошибка: y + k должно быть больше нуля для вычисления логарифма." << std::endl;
+        return 1;
+    }
+
+    // Вычисление числителя
+    double numerator = sqrt(pow(sin(y), 2) + 6.835);
+
+    // Вычисление знаменателя
+    double denominator = log(y + k) + 3 * pow(y, 2);
+
+    // Проверка на допустимость деления на ноль
+    if (denominator == 0) {
+        std::cerr << "Ошибка: Деление на ноль." << std::endl;
+        return 1;
+    }
+
+    // Вычисление R
+    double R = numerator / denominator;
+
+    // Вывод результата
+    std::cout << "Значение R: " << R << std::endl;
+
+    return 0;
+}
