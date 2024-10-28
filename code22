@@ -1,0 +1,38 @@
+#include <iostream>
+#include <cmath> // Для математических функций
+
+int main() {
+    double y, t;
+
+    // Ввод значений y и t
+    std::cout << "Введите значение y: ";
+    std::cin >> y;
+    std::cout << "Введите значение t: ";
+    std::cin >> t;
+
+    // Вычисление числителя
+    double numerator = 4.351 * pow(y, 3) + 2 * t * log(t);
+
+    // Вычисление знаменателя
+    double denominator = sqrt(cos(2 * y) + 4.351);
+
+    // Проверка на деление на ноль
+    if (denominator == 0) {
+        std::cerr << "Ошибка: Деление на ноль." << std::endl;
+        return 1;
+    }
+
+    // Проверка на допустимость вычисления квадратного корня
+    if (cos(2 * y) + 4.351 < 0) {
+        std::cerr << "Ошибка: Нельзя вычислить квадратный корень из отрицательного числа." << std::endl;
+        return 1;
+    }
+
+    // Вычисление s
+    double s = numerator / denominator;
+
+    // Вывод результата
+    std::cout << "Значение s: " << s << std::endl;
+
+    return 0;
+}
