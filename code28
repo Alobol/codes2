@@ -1,0 +1,31 @@
+#include <iostream>
+#include <cmath> // Для математических функций
+
+int main() {
+    double v, beta, gamma;
+
+    // Ввод значений v, beta и gamma
+    std::cout << "Введите значение v: ";
+    std::cin >> v;
+    std::cout << "Введите значение beta: ";
+    std::cin >> beta;
+    std::cout << "Введите значение gamma: ";
+    std::cin >> gamma;
+
+    // Вычисление W^*
+    double numerator = 0.004 * v + exp(5 * beta);
+    double denominator = exp(gamma / 2);
+
+    // Проверка на допустимость деления на ноль
+    if (denominator == 0) {
+        std::cerr << "Ошибка: Деление на ноль." << std::endl;
+        return 1;
+    }
+
+    double W_star = numerator / denominator;
+
+    // Вывод результата
+    std::cout << "Значение W^*: " << W_star << std::endl;
+
+    return 0;
+}
