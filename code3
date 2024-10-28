@@ -1,0 +1,25 @@
+#include <iostream>
+#include <cmath> // Для математических функций
+
+int main() {
+    double d, y;
+
+    // Ввод значений d и y
+    std::cout << "Введите значение d: ";
+    std::cin >> d;
+    std::cout << "Введите значение y: ";
+    std::cin >> y;
+
+    // Проверка на допустимость значений
+    if (d <= 0) {
+        std::cerr << "Ошибка: d должно быть больше 0 для вычисления ln(d)." << std::endl;
+        return 1;
+    }
+
+    double F = log(d) + (3.5 * pow(d, 2) + 1) / cos(2 * y);
+
+    // Вывод результата
+    std::cout << "Значение F: " << F << std::endl;
+
+    return 0;
+}
