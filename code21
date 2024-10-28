@@ -1,0 +1,42 @@
+#include <iostream>
+#include <cmath> // Для математических функций
+
+int main() {
+    double k, p, x, d;
+
+    // Ввод значений k, p, x и d
+    std::cout << "Введите значение k: ";
+    std::cin >> k;
+    std::cout << "Введите значение p: ";
+    std::cin >> p;
+    std::cout << "Введите значение x: ";
+    std::cin >> x;
+    std::cout << "Введите значение d: ";
+    std::cin >> d;
+
+    // Вычисление знаменателя
+    double denominator = x - pow(d, 3);
+
+    // Проверка на деление на ноль
+    if (denominator == 0) {
+        std::cerr << "Ошибка: Деление на ноль." << std::endl;
+        return 1;
+    }
+
+    // Вычисление числителя
+    double numerator = sqrt(k + 2.6 * p * sin(k));
+
+    // Проверка на допустимость вычисления квадратного корня
+    if (k + 2.6 * p * sin(k) < 0) {
+        std::cerr << "Ошибка: Нельзя вычислить квадратный корень из отрицательного числа." << std::endl;
+        return 1;
+    }
+
+    // Вычисление Q
+    double Q = numerator / denominator;
+
+    // Вывод результата
+    std::cout << "Значение Q: " << Q << std::endl;
+
+    return 0;
+}
