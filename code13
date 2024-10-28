@@ -1,0 +1,29 @@
+#include <iostream>
+#include <cmath> // Для математических функций
+
+int main() {
+    double y, h;
+
+    // Ввод значений y и h
+    std::cout << "Введите значение y: ";
+    std::cin >> y;
+    std::cout << "Введите значение h: ";
+    std::cin >> h;
+
+    // Вычисление A
+    double numerator = sin(2 * y + h) + pow(h, 2);
+    double denominator = exp(h) + y;
+
+    // Проверка на допустимость деления на ноль
+    if (denominator == 0) {
+        std::cerr << "Ошибка: Деление на ноль." << std::endl;
+        return 1;
+    }
+
+    double A = numerator / denominator;
+
+    // Вывод результата
+    std::cout << "Значение A: " << A << std::endl;
+
+    return 0;
+}
