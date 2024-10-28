@@ -1,0 +1,34 @@
+#include <iostream>
+#include <cmath> // Для математических функций
+
+int main() {
+    double t, r, y;
+
+    // Ввод значений t, r и y
+    std::cout << "Введите значение t: ";
+    std::cin >> t;
+    std::cout << "Введите значение r: ";
+    std::cin >> r;
+    std::cout << "Введите значение y: ";
+    std::cin >> y;
+
+    // Вычисление числителя
+    double numerator = 4 * pow(t, 3) + log(r);
+
+    // Вычисление знаменателя
+    double denominator = exp(y + r) + 7 + 2 * sin(r);
+
+    // Проверка на допустимость деления на ноль
+    if (denominator == 0) {
+        std::cerr << "Ошибка: Деление на ноль." << std::endl;
+        return 1;
+    }
+
+    // Вычисление W
+    double W = numerator / denominator;
+
+    // Вывод результата
+    std::cout << "Значение W: " << W << std::endl;
+
+    return 0;
+}
