@@ -1,0 +1,38 @@
+#include <iostream>
+#include <cmath> // Для математических функций
+
+int main() {
+    double a, t, y, c;
+
+    // Ввод значений a, t, y и c
+    std::cout << "Введите значение a: ";
+    std::cin >> a;
+    std::cout << "Введите значение t: ";
+    std::cin >> t;
+    std::cout << "Введите значение y: ";
+    std::cin >> y;
+    std::cout << "Введите значение c: ";
+    std::cin >> c;
+
+    // Проверка на допустимость значений
+    if (a + 2 * y <= 0) {
+        std::cerr << "Ошибка: a + 2y должно быть больше 0 для вычисления ln(a + 2y)." << std::endl;
+        return 1;
+    }
+
+    // Вычисление D
+    double numerator = 7.8 * pow(a, 2) + 3.52 * t;
+    double denominator = log(a + 2 * y) + c;
+
+    if (denominator == 0) {
+        std::cerr << "Ошибка: Деление на ноль." << std::endl;
+        return 1;
+    }
+
+    double D = numerator / denominator;
+
+    // Вывод результата
+    std::cout << "Значение D: " << D << std::endl;
+
+    return 0;
+}
