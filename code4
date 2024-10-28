@@ -1,0 +1,39 @@
+#include <iostream>
+#include <cmath> // Для математических функций
+
+int main() {
+    double w, y;
+
+    // Ввод значений w и y
+    std::cout << "Введите значение w: ";
+    std::cin >> w;
+    std::cout << "Введите значение y: ";
+    std::cin >> y;
+
+    // Проверка на допустимость значений
+    if (w < 0) {
+        std::cerr << "Ошибка: w должно быть неотрицательным для вычисления sqrt(w)." << std::endl;
+        return 1;
+    }
+    
+    if (y <= -3.5) {
+        std::cerr << "Ошибка: y должно быть больше -3.5 для вычисления ln(y + 3.5)." << std::endl;
+        return 1;
+    }
+
+    // Вычисление G
+    double numerator = 9.33 * pow(w, 3) + sqrt(w);
+    double denominator = log(y + 3.5) + sqrt(y);
+
+    if (denominator == 0) {
+        std::cerr << "Ошибка: Деление на ноль." << std::endl;
+        return 1;
+    }
+
+    double G = numerator / denominator;
+
+    // Вывод результата
+    std::cout << "Значение G: " << G << std::endl;
+
+    return 0;
+}
