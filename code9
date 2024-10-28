@@ -1,0 +1,32 @@
+#include <iostream>
+#include <cmath> // Для математических функций
+
+int main() {
+    double y, w, S;
+
+    // Ввод значений y, w и S
+    std::cout << "Введите значение y: ";
+    std::cin >> y;
+    std::cout << "Введите значение w: ";
+    std::cin >> w;
+    std::cout << "Введите значение S: ";
+    std::cin >> S;
+
+    // Вычисление числителя и знаменателя
+    double numerator = pow((y + 2 * w), 3);
+    double denominator = log(y + 0.7 * S);
+
+    // Проверка на допустимость значений
+    if (denominator <= 0) {
+        std::cerr << "Ошибка: Аргумент логарифма должен быть положительным." << std::endl;
+        return 1;
+    }
+
+    // Вычисление V
+    double V = numerator / denominator;
+
+    // Вывод результата
+    std::cout << "Значение V: " << V << std::endl;
+
+    return 0;
+}
