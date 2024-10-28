@@ -1,0 +1,38 @@
+#include <iostream>
+#include <cmath> // Для математических функций
+
+int main() {
+    double y, n;
+
+    // Ввод значений y и n
+    std::cout << "Введите значение y: ";
+    std::cin >> y;
+    std::cout << "Введите значение n: ";
+    std::cin >> n;
+
+    // Проверка, что y не отрицательное для вычисления корня
+    if (y < 0) {
+        std::cerr << "Ошибка: y не должно быть отрицательным для вычисления корня." << std::endl;
+        return 1;
+    }
+
+    // Вычисление числителя
+    double numerator = pow(y, 2) - 0.8 * y + sqrt(y);
+
+    // Вычисление знаменателя
+    double denominator = 23.1 * pow(n, 2) + cos(n);
+
+    // Проверка на допустимость деления на ноль
+    if (denominator == 0) {
+        std::cerr << "Ошибка: Деление на ноль." << std::endl;
+        return 1;
+    }
+
+    // Вычисление H
+    double H = numerator / denominator;
+
+    // Вывод результата
+    std::cout << "Значение H: " << H << std::endl;
+
+    return 0;
+}
