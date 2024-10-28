@@ -1,0 +1,34 @@
+#include <iostream>
+#include <cmath> // Для математических функций
+
+int main() {
+    double i, y;
+
+    // Ввод значений i и y
+    std::cout << "Введите значение i: ";
+    std::cin >> i;
+    std::cout << "Введите значение y: ";
+    std::cin >> y;
+
+    // Проверка на допустимость значений
+    if (y <= 0) {
+        std::cerr << "Ошибка: y должно быть больше 0 для вычисления ln(y)." << std::endl;
+        return 1;
+    }
+
+    // Вычисление L
+    double numerator = 0.81 * cos(i);
+    double denominator = log(y) + 2 * pow(i, 3);
+
+    if (denominator == 0) {
+        std::cerr << "Ошибка: Деление на ноль." << std::endl;
+        return 1;
+    }
+
+    double L = numerator / denominator;
+
+    // Вывод результата
+    std::cout << "Значение L: " << L << std::endl;
+
+    return 0;
+}
