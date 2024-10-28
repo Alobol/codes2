@@ -1,0 +1,36 @@
+#include <iostream>
+#include <cmath> // Для математических функций
+
+int main() {
+    double k, y, sigma;
+
+    // Ввод значений k, y и sigma
+    std::cout << "Введите значение k: ";
+    std::cin >> k;
+    std::cout << "Введите значение y: ";
+    std::cin >> y;
+    std::cout << "Введите значение sigma: ";
+    std::cin >> sigma;
+
+    // Проверка на допустимость значений
+    if (k <= y) {
+        std::cerr << "Ошибка: k должно быть больше y для вычисления ln(k - y)." << std::endl;
+        return 1;
+    }
+
+    // Вычисление U
+    double numerator = log(k - y) + pow(y, 4);
+    double denominator = pow(sigma, y) + 2.355 * pow(k, 2);
+
+    if (denominator == 0) {
+        std::cerr << "Ошибка: Деление на ноль." << std::endl;
+        return 1;
+    }
+
+    double U = numerator / denominator;
+
+    // Вывод результата
+    std::cout << "Значение U: " << U << std::endl;
+
+    return 0;
+}
