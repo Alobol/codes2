@@ -1,0 +1,30 @@
+#include <iostream>
+#include <cmath> // Для математических функций
+
+int main() {
+    double t, y;
+
+    // Ввод значений t и y
+    std::cout << "Введите значение t: ";
+    std::cin >> t;
+    std::cout << "Введите значение y: ";
+    std::cin >> y;
+
+    // Вычисление числителя и знаменателя
+    double numerator = 2.37 * sin(t + 1);
+    double denominator = sqrt(4 * pow(y, 2) - 0.1 * y + 5);
+
+    // Проверка на допустимость значений
+    if (denominator == 0) {
+        std::cerr << "Ошибка: Деление на ноль." << std::endl;
+        return 1;
+    }
+
+    // Вычисление T
+    double T = numerator / denominator;
+
+    // Вывод результата
+    std::cout << "Значение T: " << T << std::endl;
+
+    return 0;
+}
