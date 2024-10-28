@@ -1,0 +1,38 @@
+#include <iostream>
+#include <cmath> // Для математических функций
+
+int main() {
+    double h, a, v, b, y;
+
+    // Ввод значений h, a, v, b и y
+    std::cout << "Введите значение h: ";
+    std::cin >> h;
+    std::cout << "Введите значение a: ";
+    std::cin >> a;
+    std::cout << "Введите значение v: ";
+    std::cin >> v;
+    std::cout << "Введите значение b: ";
+    std::cin >> b;
+    std::cout << "Введите значение y: ";
+    std::cin >> y;
+
+    // Вычисление числителя
+    double numerator = 0.355 * pow(h, 2) - 4.355;
+
+    // Вычисление знаменателя
+    double denominator = pow(a, (v - b)) + sqrt(2.7 * y);
+
+    // Проверка на допустимость деления на ноль
+    if (denominator == 0) {
+        std::cerr << "Ошибка: Деление на ноль." << std::endl;
+        return 1;
+    }
+
+    // Вычисление T
+    double T = numerator / denominator;
+
+    // Вывод результата
+    std::cout << "Значение T: " << T << std::endl;
+
+    return 0;
+}
