@@ -1,0 +1,40 @@
+#include <iostream>
+#include <cmath> // Для математических функций
+
+int main() {
+    double y, d, sigma;
+
+    // Ввод значений y, d и sigma
+    std::cout << "Введите значение y: ";
+    std::cin >> y;
+    std::cout << "Введите значение d: ";
+    std::cin >> d;
+    std::cout << "Введите значение sigma: ";
+    std::cin >> sigma;
+
+    // Вычисление числителя
+    double numerator = pow(sin(y), 2) + 0.3 * d;
+
+    // Вычисление знаменателя
+    double denominator = pow(sigma, 7) + log(d);
+
+    // Проверка на деление на ноль
+    if (denominator == 0) {
+        std::cerr << "Ошибка: Деление на ноль." << std::endl;
+        return 1;
+    }
+
+    // Проверка на допустимость вычисления логарифма
+    if (d <= 0) {
+        std::cerr << "Ошибка: Нельзя вычислить логарифм от неположительного числа." << std::endl;
+        return 1;
+    }
+
+    // Вычисление R
+    double R = numerator / denominator;
+
+    // Вывод результата
+    std::cout << "Значение R: " << R << std::endl;
+
+    return 0;
+}
