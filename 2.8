@@ -1,0 +1,13 @@
+#include <iostream>
+#include <string>
+
+std::string getTimeOfDay(int hours) {
+    return (hours < 6) ? "ночь" : (hours < 12) ? "утро" : (hours < 18) ? "день" : "вечер";
+}
+
+int main() {
+    int hours;
+    std::cin >> hours;
+    std::cout << getTimeOfDay(hours) << std::endl;
+    return 0;
+}
