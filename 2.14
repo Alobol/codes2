@@ -1,0 +1,16 @@
+#include <iostream>
+#include <string>
+
+string checkPalindrome(const string& str) {
+    return (str == string(str.rbegin(), str.rend())) ? "палиндром" : "не палиндром";
+}
+
+int main() {
+    string input;
+    cout << "Введите строку: ";
+    getline(std::cin, input);
+
+    cout << checkPalindrome(input) << endl;
+
+    return 0;
+}
