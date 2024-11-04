@@ -1,0 +1,21 @@
+#include <iostream>
+
+int main() {
+    double amount;
+    int choice;
+
+    std::cout << "Введите сумму: ";
+    std::cin >> amount;
+
+    std::cout << "1. Доллары в евроn2. Евро в рублиn3. Рубли в долларыnВыбор: ";
+    std::cin >> choice;
+
+    switch (choice) {
+        case 1: std::cout << amount * 0.85 << " евроn"; break; // Доллары в евро
+        case 2: std::cout << amount * 90 << " рублейn"; break; // Евро в рубли
+        case 3: std::cout << amount / 70 << " долларовn"; break; // Рубли в доллары
+        default: std::cout << "Неверный выборn";
+    }
+
+    return 0;
+}
