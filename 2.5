@@ -1,0 +1,17 @@
+#include <iostream>
+
+int main() {
+    int score;
+    std::cout << "Введите оценку (от 0 до 100): ";
+    std::cin >> score;
+
+    if (score < 0 || score > 100) {
+        std::cout << "Ошибка: оценка должна быть в диапазоне от 0 до 100." << std::endl;
+    } else {
+        std::cout << "Соответствующая оценка: "
+                  << (score < 60 ? "F" : score < 70 ? "D" : score < 80 ? "C" : score < 90 ? "B" : "A") 
+                  << std::endl;
+    }
+
+    return 0;
+}
