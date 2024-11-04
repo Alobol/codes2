@@ -1,0 +1,21 @@
+#include <iostream>
+
+int main() {
+    int choice;
+
+    cout << "1 - Программированиеn2 - Дизайнn3 - Маркетингn4 - Менеджментn0 - Выходn";
+
+    while (true) {
+        cout << "Введите номер курса: ";
+        cin >> choice;
+
+        switch (choice) {
+            case 1: cout << "Курс 'Программирование'.n"; break;
+            case 2: cout << "Курс 'Дизайн'.n"; break;
+            case 3: cout << "Курс 'Маркетинг'.n"; break;
+            case 4: cout << "Курс 'Менеджмент'.n"; break;
+            case 0: return 0;
+            default: cout << "Ошибка: Неверный номер.n"; break;
+        }
+    }
+}
