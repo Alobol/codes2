@@ -1,0 +1,17 @@
+#include <iostream>
+#include <string>
+
+std::string checkEvenOrOdd(int number) {
+    return (number % 2 == 0) ? "Четное" : "Нечетное";
+}
+
+int main() {
+    int num;
+
+    std::cout << "Введите целое число: ";
+    std::cin >> num;
+
+    std::cout << "Число " << num << " является: " << checkEvenOrOdd(num) << std::endl;
+
+    return 0;
+}
