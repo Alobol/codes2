@@ -1,0 +1,19 @@
+#include <iostream>
+#include <string>
+
+std::string ageCategory(int age) {
+    if (age < 13) return "ребёнок";
+    if (age < 18) return "подросток";
+    if (age < 65) return "взрослый";
+    return "пожилой";
+}
+
+int main() {
+    int age;
+    std::cout << "Введите ваш возраст: ";
+    std::cin >> age;
+
+    std::cout << "Возрастная категория: " << ageCategory(age) << std::endl;
+
+    return 0;
+}
