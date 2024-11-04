@@ -1,0 +1,11 @@
+#include <iostream>
+
+int main() {
+    double temp;
+    cout << "Введите температуру в градусах Цельсия: ";
+    cin >> temp;
+
+    cout << (temp < 10 ? "холодно" : (temp <= 25 ? "тепло" : "жарко")) << endl;
+
+    return 0;
+}
