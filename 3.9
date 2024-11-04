@@ -1,0 +1,18 @@
+#include <iostream>
+
+int main() {
+    char inputChar;
+
+    cout << "Введите символ: ";
+    cin >> inputChar;
+
+    switch (inputChar) {
+        default: 
+            cout << "Код ASCII для '" << inputChar 
+                      << "' : " << static_cast<int>(inputChar) 
+                      << endl; 
+            break;
+    }
+
+    return 0;
+}
