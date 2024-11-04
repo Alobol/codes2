@@ -1,0 +1,22 @@
+#include <iostream>
+
+int main() {
+    int choice;
+    
+    std::cout << "1. Чай - 50 рублейn"
+              << "2. Кофе - 100 рублейn"
+              << "3. Сок - 70 рублейn"
+              << "4. Вода - 30 рублейn"
+              << "Выберите напиток (1-4): ";
+    std::cin >> choice;
+
+    switch (choice) {
+        case 1: std::cout << "Цена: 50 рублейn"; break;
+        case 2: std::cout << "Цена: 100 рублейn"; break;
+        case 3: std::cout << "Цена: 70 рублейn"; break;
+        case 4: std::cout << "Цена: 30 рублейn"; break;
+        default: std::cout << "Неверный выбор.n"; break;
+    }
+
+    return 0;
+}
