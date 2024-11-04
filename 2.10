@@ -1,0 +1,12 @@
+#include <iostream>
+#include <string>
+
+int main() {
+    std::string input;
+    std::cout << "Введите строку: ";
+    std::getline(std::cin, input);
+    
+    std::cout << "Строка является: " << (input.length() < 5 ? "короткая" : "длинная") << std::endl;
+
+    return 0;
+}
