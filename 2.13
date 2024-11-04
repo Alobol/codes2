@@ -1,0 +1,11 @@
+#include <iostream>
+
+int main() {
+    int num;
+    std::cout << "Введите число: ";
+    std::cin >> num;
+
+    std::cout << (num >= 1 && num <= 100 ? "в диапазоне" : "вне диапазона") << std::endl;
+
+    return 0;
+}
