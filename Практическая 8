@@ -1,0 +1,37 @@
+#include <iostream>
+using namespace std;
+int main() {
+double b, c, d; 
+charznak; 
+cout<< "Введите первое число: "; 
+cin >> b; 
+cout<< "Введите второе число: "; 
+cin >> c; 
+cout<< "Введите знак операции: "; 
+cin >> znak; 
+switch (znak) 
+ { 
+case '+': 
+ d = b + c; 
+break; 
+case '-': 
+ d = b - c; 
+break; 
+case '*': 
+ d = b * c; 
+break; 
+case '/': 
+if (c != 0) { 
+ d = b / c; 
+ } else {
+cout<< "Ошибка: Деление на ноль!" << endl;
+return 1; 
+ }
+break; 
+default:
+cout<< "Ошибка: Неверный знак операции!" << endl;
+return 1; 
+ } 
+cout << b << " " << znak << " " << c << " = " << d << endl; 
+return 0; 
+}
