@@ -1,0 +1,10 @@
+#include <iostream>
+#include <iomanip>
+usingnamespasestd;
+int main() {
+doublea;
+cout << “Введите число с плавающей точкой: “;
+cin >> a;
+cout <<”Числовформатенаучнойнотации: “ << scientific << setprecision << a << endl;
+return 0;
+}
