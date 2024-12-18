@@ -1,0 +1,23 @@
+#include <iostream>
+#include <string>
+using namespace std;
+int main() {
+constint size = 5; 
+stringarr[size]; 
+cout << "Введите " << size << " строк:" << endl;
+for (inti = 0; i < size; i++) {
+getline(cin, arr[i]);
+ }
+for (inti = 0; i < size - 1; i++) {
+for (int j = 0; j < size - 1 - i; j++) {
+if (arr[j] > arr[j + 1]) {
+swap(arr[j], arr[j + 1]); 
+ }
+ }
+ }
+cout << "Отсортированныестроки:" << endl;
+for (const string& str : arr) {
+cout<< str << endl;
+ }
+return 0; 
+}
