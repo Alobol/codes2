@@ -1,0 +1,11 @@
+#include <iostream>
+usingnamespasestd;
+int main() {
+intk;
+cout << “Введите число: “;
+cin >> k;
+if(k % 2 == 0)
+cout<< “Чётное”;
+else cout<<”Нечётное”;
+return 1;
+}
