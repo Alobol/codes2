@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std;
+intfibonachi(int a); 
+int main() {
+int n; 
+cout<< "Введите номер числа Фибоначчи, который необходимо найти: "; 
+cin >> n; 
+cout<< "Число Фибоначчи равно: " << fibonachi(n) << endl; 
+return 0;
+}
+intfibonachi(int a) 
+{ 
+if (a == 0) return 0; 
+if (a == 1) return 1; 
+returnfibonachi(a - 1) + fibonachi(a - 2); 
+}
