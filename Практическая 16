@@ -1,0 +1,28 @@
+#include <iostream>
+#include <cstdlib> // 
+#include <ctime> // 
+using namespace std;
+doublesredneeArray(int* array, int size);
+int main() {
+constint size = 10; 
+int array[size]; 
+srand(static_cast<unsigned int>(time(0))); 
+for (inti = 0; i < size; i++) { 
+array[i] = 1 + rand() % 20; 
+ } 
+cout << "Исходныймассив: "; 
+for (inti = 0; i < size; i++) { 
+cout << array[i] << " "; 
+ } 
+int* arr = array; 
+cout << endl; 
+cout << "Среднеезначение: " << sredneeArray(arr, size) << endl; 
+return 0; 
+}
+doublesredneeArray(int* array, int size) { 
+int sum = 0; 
+for (inti = 0; i < size; i++) { 
+sum += array[i]; 
+ } 
+return double(sum) / size; 
+}
