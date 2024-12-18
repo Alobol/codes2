@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+doublesrednee(double a, double b);
+int main() {
+double b, c; 
+cout<< "Введите первое число: "; 
+cin >> b; 
+cout<< "Введите второе число: "; 
+cin >> c; 
+cout<< "Среднее значение двух чисел равно: " << srednee(b, c) << endl; 
+return 0;
+}
+doublesrednee(double a, double b) { 
+doublesred; 
+sred = (a + b) / 2; 
+returnsred; 
+}
