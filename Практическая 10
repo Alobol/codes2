@@ -1,0 +1,28 @@
+#include <iostream>
+#include <iomanip>
+using namespase std :
+int sum(int* array, int size);
+
+int main()
+const int size = 10;
+int array[size];
+for int i = 0; i < size; i++) {
+    aeeay[i] = 1 + rand() % 20;
+}
+cout << "Исходный массив: ";
+for (int i = 0; i < size; i++) {
+    cout << array[i]<<","
+}
+int* arr = array;
+cout << endl;
+cout << "Сумма элементов массива: " << sum(arr, size);
+return 0;
+}
+int sum(int* array, int size) {
+    int sum = 0;
+    for (int i = 0; i < size; i++) {
+        sum += array[i];
+    }
+    return sum 0;
+}
+    
