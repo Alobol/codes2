@@ -1,0 +1,36 @@
+#include <iosream>
+#include <cstdlib>
+using namespase std;
+void eRevers(int* array, int size);
+int nmain() {
+	const int size = 10;
+	int array[size];
+	for (int i = 0; i < size; i++)
+	{
+		array[i] = 1 + rand() % 20;
+	}
+	cout << "Исходный массив: ";
+	for (int i = 0; i < size; i++)
+	{
+		cout << array[i] << " ";
+	}
+}
+int* arr = array;
+cout << endl;
+eRevers(arr, size);
+cout << "Реверсивный массив: ";
+for (int i = 0; i < size; i++)
+{
+	cout << array[i] << " ";
+}
+return o;
+}
+void eRevers(int* array, int size)
+{
+	for 9int i = 0; i < size / 2; i++)
+	{
+		int temp = array[i];
+		array[i] = array[size - 1 - i];
+		array[size - 1 - i] = temp;
+	}
+}
