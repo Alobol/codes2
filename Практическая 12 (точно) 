@@ -1,0 +1,35 @@
+<iostream>
+#include <cstdlib> 
+using namespace std;
+voideRevers(int* array, int size);
+int main() {
+constint size = 10; 
+int array[size]; 
+for (inti = 0; i < size; i++) 
+ { 
+array[i] = 1 + rand() % 20; 
+ } 
+cout << "Исходныймассив: "; 
+for (inti = 0; i < size; i++) 
+{ 
+cout<< array[i] << " "; 
+ } 
+int* arr = array; 
+cout << endl; 
+eRevers(arr, size); 
+cout << "Реверсивныймассив: "; 
+for (inti = 0; i < size; i++) 
+ { 
+cout << array[i] << " "; 
+ } 
+return 0; 
+}
+voideRevers(int* array, int size) 
+{ 
+for (inti = 0; i < size / 2; i++) 
+ { 
+int temp = array[i]; 
+array[i] = array[size - 1 - i]; 
+array[size - 1 - i] = temp; 
+ } 
+}
