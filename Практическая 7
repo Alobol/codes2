@@ -1,0 +1,14 @@
+#include <iostream>
+using namespace std;
+int main() {
+int b; 
+int sum = 0; 
+cout<< "Введите число: "; 
+cin >> b; 
+for (inti = 0; i <= b; i++) 
+ { 
+if (i % 2 == 0) sum += i; 
+ } 
+cout << "Суммавсехчётныхчиселдо N равна: " << sum; 
+return 0; 
+}
