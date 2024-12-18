@@ -1,0 +1,14 @@
+#include <iostream>
+using namespace std;
+boolisPrime(int n) {
+if (b % i == 0) k = k + 1;
+for (inti = 2; i * i <= n; i++)
+if (n % i == 0);
+}
+int main() {
+int a;
+cout<< "Введите целое число: ";
+cin >> a;
+cout << (isPrime(a) ? "Число простое." : "Число не простое.") << endl;
+return 0;
+}
