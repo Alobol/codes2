@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+intevklid(int b, int c);
+
+intmain() {
+int b, c; 
+cout<< "Введите первое число: "; 
+cin >> b; 
+cout<< "Введите второе число: "; 
+cin >> c; 
+cout<< "НОД двух чисел равен: " << evklid(b, c) << endl; 
+return 0; 
+}
+intevklid(int b, int c) { 
+if (c == 0) 
+return b; 
+returnevklid(c, b % c); 
+}
