@@ -1,0 +1,161 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <unordered_map>
+#include <queue>
+#include <random>
+
+class Service {
+public:
+    std::string name;
+    bool isHealthy;
+
+    Service(const std::string& name) : name(name), isHealthy(true) {}
+
+    void checkHealth() {
+        isHealthy = (rand() % 2 == 0);
+    }
+};
+
+class API {
+public:
+    void handleRequest(const std::string& request) {
+        std::cout << "Handling request: " << request << "\n";
+    }
+};
+
+class Database {
+private:
+    std::unordered_map<std::string, std::string> data;
+
+public:
+    void save(const std::string& key, const std::string& value) {
+        data[key] = value;
+    }
+
+    std::string fetch(const std::string& key) {
+        return data.count(key) ? data[key] : "";
+    }
+};
+
+class MessageQueue {
+private:
+    std::queue<std::string> messages;
+
+public:
+    void enqueue(const std::string& message) {
+        messages.push(message);
+    }
+
+    std::string dequeue() {
+        if (messages.empty()) return "";
+        std::string message = messages.front();
+        messages.pop();
+        return message;
+    }
+
+    bool isEmpty() const {
+        return messages.empty();
+    }
+};
+
+class LoadBalancer {
+private:
+    std::vector<Service> services;
+
+public:
+    void addService(const Service& service) {
+        services.push_back(service);
+    }
+
+    Service* getNextService() {
+        for (auto& service : services) {
+            if (service.isHealthy) {
+                return &service;
+            }
+        }
+        return nullptr;
+    }
+};
+
+class Client {
+private:
+    API api;
+    LoadBalancer loadBalancer;
+
+public:
+    void addService(const Service& service) {
+        loadBalancer.addService(service);
+    }
+
+    void sendRequest(const std::string& request) {
+        Service* service = loadBalancer.getNextService();
+        if (service) {
+            api.handleRequest(request);
+            // Simulate processing and database interaction
+            Database db;
+            db.save("request", request);
+            std::cout << "Saved request to database.\n";
+        }
+        else {
+            std::cout << "No healthy services available.\n";
+        }
+    }
+
+    void checkServicesHealth() {
+        for (auto& service : loadBalancer.getNextService()) {
+            service.checkHealth();
+            if (!service.isHealthy) {
+                std::cout << "Service " << service.name << " is unhealthy.\n";
+            }
+        }
+    }
+};
+
+int main() {
+    Client client;
+
+    Service service1("Service1");
+    Service service2("Service2");
+
+    client.addService(service1);
+    client.addService(service2);
+
+    client.checkServicesHealth();
+
+    client.sendRequest("GET /api/data");
+
+    return 0;
+} be positive.");
+        }
+    }
+
+    double getArea() const override {
+        return 0.5 * base * height;
+    }
+};
+
+int main() {
+    try {
+        Shape* circle = new Circle(5);
+        std::cout << "Circle area: " << circle->getArea() << std::endl;
+        delete circle;
+
+        Shape* rectangle = new Rectangle(4, 6);
+        std::cout << "Rectangle area: " << rectangle->getArea() << std::endl;
+        delete rectangle;
+
+        Shape* triangle = new Triangle(3, 4);
+        std::cout << "Triangle area: " << triangle->getArea() << std::endl;
+        delete triangle;
+
+        Shape* invalidCircle = new Circle(-5);
+        delete invalidCircle;
+
+    }
+    catch (const std::invalid_argument& e) {
+        std::cerr << "Error: " << e.what() << std::endl;
+    }
+
+    return 0;
+}
